@@ -46,5 +46,11 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
     /* Batas Pelanggan dan Menu */
     $router->get('menu', ['uses' => 'MenuController@index']);
 
+    $router->get('menu/{id}', ['uses' => 'MenuController@show']);
+
+    $router->delete('menu/{id}', ['uses' => 'MenuController@destroy']);
+
+    $router->post('menu/{id}', ['uses' => 'MenuController@update']);
+
     $router->post('menu', ['uses' => 'MenuController@create']);
 });
