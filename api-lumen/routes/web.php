@@ -53,4 +53,11 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
     $router->post('menu/{id}', ['uses' => 'MenuController@update']);
 
     $router->post('menu', ['uses' => 'MenuController@create']);
+
+     /* Batas Menu dan Order */
+    $router->get('order', ['uses' => 'OrderController@index']);
+
+    $router->get('order/{a}/{b}', ['uses' => 'OrderController@show']);
+
+    $router->put('order/{id}', ['uses' => 'OrderController@update']);
 });

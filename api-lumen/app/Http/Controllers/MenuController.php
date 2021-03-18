@@ -18,10 +18,10 @@ class MenuController extends Controller
         // $data = Menu::all();
 
         $data = DB::table('menus')
-        ->join('kategoris', 'kategoris.idkategori', '=', 'menus.idkategori')
-        ->select('menus.*', 'kategoris.kategori')
-        ->orderBy('menus.menu', 'asc')
-        ->get();
+                    ->join('kategoris', 'kategoris.idkategori', '=', 'menus.idkategori')
+                    ->select('menus.*', 'kategoris.kategori')
+                    ->orderBy('menus.menu', 'asc')
+                    ->get();
 
         return response()->json($data);
     }
